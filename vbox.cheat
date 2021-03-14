@@ -3,10 +3,10 @@
 $ vm: vboxmanage list vms | awk '{print $1}'
 
 # Update guest additions sur vm
-vboxmanage guestcontrol <vm> updateguestadditions  --source /usr/share/virtualbox/VBoxGuestAdditions.iso --verbose
+VBoxManage guestcontrol <vm> updateguestadditions  --source /usr/share/virtualbox/VBoxGuestAdditions.iso --verbose
 
 # Supprime une vm
 vboxmanage unregistervm <vm> --delete
 
 # Pour une vm ($1) crée une redirection nommée ($2) du port hôte ($3) vers le port invité ($4)
-vboxmanage modifyvm <vm> --natpf1 "$2,tcp,,$3,,$4"
+VBoxManage modifyvm <vm> --natpf1 "$2,tcp,,$3,,$4"

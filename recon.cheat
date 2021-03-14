@@ -15,9 +15,3 @@ cat <domains_list_file> | httprobe -c 20 | aquatone -chrome-path /bin/chromium
 
 # Aquatone + dnsgen
 dnsgen -w <wordlist> <domains_list_file> | httprobe -c 20 | aquatone -chrome-path /bin/chromium
-
-# test
-ls
-id
-uname
-pwd
