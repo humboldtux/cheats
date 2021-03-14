@@ -1,0 +1,4 @@
+% sql, sqlmap
+
+# Basic usage
+sqlmap -u <url>
