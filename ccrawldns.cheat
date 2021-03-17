@@ -1,0 +1,7 @@
+% recon, subdomain
+
+# Basic
+CCrawlDNS.py -d <domain>
+
+# Print all URLs with the file extension (i.e.: asp):
+CCrawlDNS.py -d <domain> -p -f .<ext>

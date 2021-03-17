@@ -1,0 +1,7 @@
+% recon, hostname
+
+# Simple Usage Example
+hosthunter.py <targets.txt>
+
+# Run HostHunter with Bing and Screen Capture modules enabled
+hosthunter.py <targets.txt> --bing -sc -f csv -o hosts.csv

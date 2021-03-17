@@ -1,0 +1,4 @@
+% recon, hakrawler
+
+# Basic
+echo <domainname> | hakrawler -plain
