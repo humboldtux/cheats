@@ -1,0 +1,9 @@
+% worldlist
+
+# Add to lists
+echo <path> | anew ~/tools/wls/recursive.txt
+echo <path> | anew ~/tools/wls/massive.txt
+echo <path> | anew ~/tools/wls/quick.txt
+
+# Add from file
+while read line;do navi --query "wordlist Add to lists" $line;done < <file>

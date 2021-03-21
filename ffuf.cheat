@@ -1,0 +1,29 @@
+% ffuf
+
+# Basic fuff
+ffuf -u <url>/FUFF -w <list> -t 75 -ac -c
+$ list: find /usr/share/seclists -type f -not -path "/usr/share/seclists/.git/*" -print
+
+; dom=$(echo <url> | unfurl format %s%d)
+# Quick
+ffuf -c -v -u <url>/FUZZ -w quick.txt \
+	-H "User-Agent: Mozilla Firefox Mozilla/5.0" \
+	-H "X-Bug-Bounty: rez0" -ac -mc all -o <dom>.csv \
+	-of csv $2 -maxtime 360 <$3>
+
+; dom=$(echo <url> | unfurl format %s%d)
+# Recursive
+  mkdir -p recursive
+  ffuf -c -v -u <url>/FUZZ -w $2 -H "User-Agent: Mozilla Firefox Mozilla/5.0" \
+  -H "X-Bug-Bounty: rez0" -recursion -recursion-depth 5 -mc all -ac \
+  -o recursive/recursive_<dom>.csv -of csv <$3>
+
+; dom=$(echo <url> | unfurl format %s%d)
+# vhosts
+	ffuf -c -u <url> -H "Host: FUZZ" -w vhosts.txt \
+	-H "X-Bug-Bounty: rez0" -ac -mc all -fc 400,404 -o vhost_<output>.csv \
+	-of csv -maxtime 120
+
+# cvs processing ffuf output
+find -name "*.csv" -exec cat {} \; | grep ,200, \
+	| sed 's/,/ /g' | sort -k 5,5 -u -n | vim -

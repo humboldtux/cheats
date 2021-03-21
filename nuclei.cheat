@@ -1,0 +1,11 @@
+% nuclei
+
+# single site
+echo <siteW | nuclei -t cves/ -t exposed-tokens/ -t exposed-tokens/ \
+		-t exposed-tokens/ -t vulnerabilities/ -t fuzzing/ -t misconfiguration/ \
+		-t miscellaneous/dir-listing.yaml -pbar -c 30
+
+# sites list
+nuclei -l <list> -t cves/ -t exposed-tokens/ -t exposed-tokens/ \
+		-t exposed-tokens/ -t vulnerabilities/ -t fuzzing/ -t misconfiguration/ \
+		-t miscellaneous/dir-listing.yaml -pbar -c 50

@@ -1,5 +1,23 @@
 % recon
 
+# Find subdomains
+findomain -t <domain>
+
+# Find subdomains
+sublist3r -d <domain>
+
+# Find subdomains
+sufinder -d <domain> -o <output>
+
+# Find subdomains from list, recursive
+sufinder -dL <domains> --recursive -o <output>
+
+# subzy subdomains takeover
+subzy --targets <file> --concurrency 20 --hide fails
+
+# subjack subdomains takeover
+subjack -w <sites> -t 100 -timeout 30 -o <output> -ssl
+
 # Bruteforce domains with amass
 amass enum -brute -d <domain> -o <domain>.txt -p 80,443,8080,8443,8000
 
@@ -15,3 +33,19 @@ cat <domains_list_file> | httprobe -c 20 | aquatone -chrome-path /bin/chromium
 
 # Aquatone + dnsgen
 dnsgen -w <wordlist> <domains_list_file> | httprobe -c 20 | aquatone -chrome-path /bin/chromium
+
+# cidr2ip
+nmap -sL <range> | awk '/Nmap scan report/{print $NF}'
+
+# httprobemore
+; the x-large <list> from aquatone
+cat <list> | httprobe -p http:8000 -p https:9443 -p http:8080 -p https:8443 -c 50 -t 1000
+
+# http verb tampering
+echo -n "<url>: "; for i in GET POST HEAD PUT DELETE CONNECT OPTIONS TRACE PATCH ASDF; \
+	do echo "echo -n \"$i-$(curl -k -s -X $i $1 -o /dev/null -w '%{http_code}') \""; done \
+	| parallel -j 10 ; echo
+
+# linkfinder wrapper
+python3 linkfinder.py -i <url> -o cli \
+	| grep -v http | grep -v // | sed 's/^\.\//\//' | sed 's/^\///'
