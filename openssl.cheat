@@ -1,0 +1,4 @@
+% ssl
+
+# Get ssl info
+openssl s_client -connect <url>:<port> -starttls <protocol>

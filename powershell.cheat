@@ -1,0 +1,6 @@
+% powershell
+
+# remoting
+$pass = ConvertTo-SecureString <pass> -asplaintext -force
+$cred = New-Object System.Management.Automation.PSCredential(<user>, $pass)
+Enter-PSSession -Computer <uri> -credential $cred -Authentication negotiate

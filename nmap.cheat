@@ -1,0 +1,10 @@
+% enumeration
+
+# Basic nmap
+sudo nmap -v -sC -sV -oA <outputdir> <ip>
+
+# Basic nmap
+nmap -iL <file> -p80,443,8000,8080,8443,10000
+
+# cidr2ip
+nmap -sL <range> | awk '/Nmap scan report/{print $NF}'

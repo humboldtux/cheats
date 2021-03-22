@@ -1,0 +1,7 @@
+% bruteforce, hash, cracking, password
+
+# Show example
+hashcat --example-hashes
+
+# base usage
+hashcat -m <mode> <hashfile> /opt/wordlist/rockyou.txt

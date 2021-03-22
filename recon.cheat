@@ -25,17 +25,11 @@ amass enum -brute -d <domain> -o <domain>.txt -p 80,443,8080,8443,8000
 ffuf -u <url>/FUFF -w <list> -t 75 -ac -c
 $ list: find /usr/share/seclists -type f -not -path "/usr/share/seclists/.git/*" -print
 
-# Basic nmap
-nmap -iL <file> -p80,443,8000,8080,8443,10000
-
 # Aquatone
 cat <domains_list_file> | httprobe -c 20 | aquatone -chrome-path /bin/chromium
 
 # Aquatone + dnsgen
 dnsgen -w <wordlist> <domains_list_file> | httprobe -c 20 | aquatone -chrome-path /bin/chromium
-
-# cidr2ip
-nmap -sL <range> | awk '/Nmap scan report/{print $NF}'
 
 # httprobemore
 ; the x-large <list> from aquatone

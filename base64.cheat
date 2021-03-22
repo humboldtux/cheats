@@ -1,0 +1,4 @@
+% encode
+
+# convert powershell script to b64
+cat <script> | iconv -t utf-16le | base64 -w 0

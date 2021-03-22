@@ -1,0 +1,4 @@
+% winrm, rdesktop, windows
+
+# base usage
+evil-winrm -u <user> -p <pass> -i <uri>

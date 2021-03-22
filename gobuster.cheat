@@ -1,0 +1,7 @@
+% enumeration
+
+# basic dir buster
+gobuster dir -u http://<domain> -w /opt/SecLists/Discovery/Discovery/Web-Content/raft-small-words-lowercase.txt -o <output> -s 200,302,301 -x <ext>
+
+# vhost enum
+gobuster vhost -u http://<domain> -w /opt/SecLists/Discovery/DNS/subdomains-top1million-20000.txt -o <output>

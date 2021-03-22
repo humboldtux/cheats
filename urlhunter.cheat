@@ -1,0 +1,4 @@
+% recon, url
+
+# basic search
+urlhunter -keywords <keaywordsfile> -date latest -o <outputfile>

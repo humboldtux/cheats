@@ -1,0 +1,4 @@
+% wordlist
+
+; https://github.com/urbanadventurer/username-anarchy
+username-anarchy --input-file <userinputlst> --select-format first,first.last,f.last,flast
