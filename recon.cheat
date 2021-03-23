@@ -9,6 +9,9 @@ sublist3r -d <domain>
 # Find subdomains
 sufinder -d <domain> -o <output>
 
+# cobrat project subdomains
+curl "https://sonar.omnisint.io/subdomains/<domain>" -sk | jq  -r ".[]"
+
 # Find subdomains from list, recursive
 sufinder -dL <domains> --recursive -o <output>
 
