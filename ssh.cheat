@@ -1,0 +1,7 @@
+% ssh
+
+# Generate public key from a private key
+ssh-keygen -y -f <privatekey>
+
+# Compare a public key to a public key etracted from aprivate key
+printf "$(ssh-keygen -y -f <private>)\n$(awk '{print $1" "$2}' <public>)" | sort | uniq -c
