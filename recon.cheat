@@ -1,5 +1,8 @@
 % recon
 
+# dnsrecon
+dnsrecon.py -d <domain>
+
 # Find subdomains
 findomain -t <domain>
 

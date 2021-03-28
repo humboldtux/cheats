@@ -1,0 +1,4 @@
+% packet
+
+# Listen icmp ping
+tcpdump -n icmp
