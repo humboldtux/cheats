@@ -4,4 +4,5 @@
 hashcat --example-hashes
 
 # base usage
-hashcat -m <mode> <hashfile> /opt/wordlist/rockyou.txt
+hashcat -m <mode> <hashfile> <list>
+$ list: find /opt/wordlists -type f -not -path "/opt/wordlists/SecLists/.git/*" -print

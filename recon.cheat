@@ -27,10 +27,6 @@ subjack -w <sites> -t 100 -timeout 30 -o <output> -ssl
 # Bruteforce domains with amass
 amass enum -brute -d <domain> -o <domain>.txt -p 80,443,8080,8443,8000
 
-# Basic fuff
-ffuf -u <url>/FUFF -w <list> -t 75 -ac -c
-$ list: find /usr/share/seclists -type f -not -path "/usr/share/seclists/.git/*" -print
-
 # Aquatone
 cat <domains_list_file> | httprobe -c 20 | aquatone -chrome-path /bin/chromium
 

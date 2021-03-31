@@ -1,8 +1,14 @@
 % ffuf
 
 # Basic fuff
+ffuf -u <url>/FUFF -w <wordlist>
+
+# Fuzz special chars, mc to match http code comma separated , fw to filter for Words number
+ffuf -u <url>/FUFF -w /opt/wordlists/SecLists/Fuzzing/special-chars.txt -mc <codes> -f <n>
+
+# Basic fzf fuff
 ffuf -u <url>/FUFF -w <list> -t 75 -ac -c
-$ list: find /usr/share/seclists -type f -not -path "/usr/share/seclists/.git/*" -print
+$ list: find /opt/wordlists -type f -not -path "/opt/wordlists/SecLists/.git/*" -print
 
 ; dom=$(echo <url> | unfurl format %s%d)
 # Quick

@@ -1,7 +1,13 @@
 % enumeration
 
+# Ultra fast first nmap
+sudo nmap --min-rate 10000 <ip>
+
 # Basic nmap
-sudo nmap -v -sC -sV -oA <outputdir> <ip>
+sudo nmap -v -sC -sV -oA <outputfile> <ip>
+
+# All ports nmap
+sudo nmap -p- -oA <outputfile> <ip>
 
 # Basic nmap
 nmap -iL <file> -p80,443,8000,8080,8443,10000
