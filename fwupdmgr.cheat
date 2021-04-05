@@ -1,0 +1,11 @@
+% firmware,bios
+
+# get update
+sudo fwupdmgr refresh
+sudo fwupdmgr get-updates
+
+# install update
+sudo fwupdmgr update
+
+# chack version
+sudo dmidecode -s bios-version

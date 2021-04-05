@@ -33,3 +33,6 @@ ffuf -c -v -u <url>/FUZZ -w quick.txt \
 # cvs processing ffuf output
 find -name "*.csv" -exec cat {} \; | grep ,200, \
 	| sed 's/,/ /g' | sort -k 5,5 -u -n | vim -
+
+# ssrf portscan from stdin
+seq 1 65535 | ffuf -X POST -c -w - -u <ssrfurl> -d "param=http://localhost:FUZZ"

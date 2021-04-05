@@ -1,0 +1,7 @@
+% tunnel
+
+# server
+chisel server -p <port> --reverse
+
+# client
+chisel client <serverip>:<serverport> R:<port>:127.0.0.1:<port>

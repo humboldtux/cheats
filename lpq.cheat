@@ -1,0 +1,26 @@
+% printing
+
+printer: /usr/sbin/lpc status all | grep \: | tr -d \: | fzf
+
+# stat
+lpstat -t
+
+# Print queue default printer
+lpq
+
+#Show all print queues
+lpq -a
+
+# Show queue of  a printer
+lpq -P<printer>
+
+# Print job number
+lpq -al | grep job | cut -d\[ -f2 | cut -d ' ' -f2
+
+# Show a print job
+lpq -a <job>
+job: lpq -al | grep job | cut -d\[ -f2 | cut -d ' ' -f2 | smenu -n10 -t1
+
+# Move print job
+lpmove <printer> <printer2>
+printer2: /usr/sbin/lpc status all | grep \: | tr -d \: | fzf

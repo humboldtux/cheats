@@ -1,0 +1,4 @@
+% crackmapexex, ssh, crack
+
+# ssh brutefoce
+cme ssh <target> -u <userlist> -p <pwdlist>

