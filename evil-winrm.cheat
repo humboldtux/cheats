@@ -1,4 +1,4 @@
 % winrm, rdesktop, windows
 
-# base usage
+# basic auth connection
 evil-winrm -u <user> -p <pass> -i <uri>

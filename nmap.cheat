@@ -1,15 +1,15 @@
 % enumeration
 
-# Ultra fast first nmap
-sudo nmap --min-rate 10000 <ip>
-
-# Basic nmap
+# first basic nmap
 sudo nmap -v -sC -sV -oA <outputfile> <ip>
 
-# All ports nmap
-sudo nmap -p- -oA <outputfile> <ip>
+# second basic all ports nmap
+sudo nmap -v -p- -oA <outputfile> <ip>
 
-# Basic nmap
+# Ultra fast nmap
+sudo nmap --min-rate 10000 <ip>
+
+# limited nmap
 nmap -iL <file> -p80,443,8000,8080,8443,10000
 
 # cidr2ip

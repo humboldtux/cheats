@@ -1,4 +1,7 @@
 % crackmapexex, ssh, crack
 
-# ssh brutefoce
+# winrm (no bruteforce: test 1<=>1)
+cme winrm <target> -u <userlist> -p <pwdlist> --continue-on-success --no-bruteforce
+
+# ssh (brutefoce)
 cme ssh <target> -u <userlist> -p <pwdlist>
