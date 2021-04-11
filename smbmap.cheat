@@ -1,0 +1,4 @@
+% smb
+
+# List SMB shares with invalid user + empty password
+smbmap -u invalid -H <target>

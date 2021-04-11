@@ -1,0 +1,4 @@
+% windows, ntlm, sam, hash
+
+# extract local user account password hashes
+pwdump.py <sysfile> <samfile>

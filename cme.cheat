@@ -1,7 +1,26 @@
-% crackmapexex, ssh, crack
+% crackmapexec, winrm
 
 # winrm (no bruteforce: test 1<=>1)
 cme winrm <target> -u <userlist> -p <pwdlist> --continue-on-success --no-bruteforce
 
+# winrm (bruteforce)
+cme winrm <target> -u <userlist> -p <pwdlist> --continue-on-success
+
+% crackmapexec, ssh
+
 # ssh (brutefoce)
-cme ssh <target> -u <userlist> -p <pwdlist>
+cme ssh <target> -u <userlist> -p <pwdlist> --continue-on-success
+
+# ssh (no bruteforce: test 1<=>1)
+cme ssh <target> -u <userlist> -p <pwdlist> --continue-on-success --no-bruteforce
+
+% crackmapexec, smb
+
+# general info
+cme smb <ip>
+
+# list shares
+cme smb <ip> --shares
+
+# bruteforce local user
+cme smb <ip> --local-auth -u <user> -p <pwdlst>

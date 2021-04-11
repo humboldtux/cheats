@@ -1,4 +1,7 @@
-% winrm, rdesktop, windows
+% winrm, rdesktop, windows, hash
 
 # basic auth connection
 evil-winrm -u <user> -p <pass> -i <uri>
+
+# NTLM Hash connection
+evil-winrm -u <user> -H <hash> -i <uri>

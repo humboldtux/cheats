@@ -1,0 +1,4 @@
+% windows
+
+# Python lsa dump
+pypykatz lsa minidump <lsassdump>

@@ -1,0 +1,4 @@
+% windows, backup, copy
+
+# Copy files in backup mode
+robocopy /b <sourcedir> <destdir> <filetocopy>

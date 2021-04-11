@@ -1,0 +1,4 @@
+% windows
+
+# mount smb cifs share
+sudo mount -o username=<user>,password='<password>' -t cifs \\\\<server>\<share> /mnt

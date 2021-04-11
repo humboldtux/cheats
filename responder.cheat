@@ -1,0 +1,5 @@
+% windows, active-directory, ntlm, netbios
+
+; https://github.com/lgandx/Responder
+# basic responder
+sudoeresponder -I tun0 --lm

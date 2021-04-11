@@ -1,16 +1,18 @@
+% ping, sweep
+
+# Ping sweep network ranges
+sudo nmap -n -sn -iL <rangesfile> -oA <outpufile> -PE
+
 % enumeration
 
+# fast nmap
+sudo nmap -n -Pn -T4 -F <ip>
+
 # first basic nmap
-sudo nmap -v -sC -sV -oA <outputfile> <ip>
+sudo nmap -n -Pn -v -sC -sV -oA <outputfile> <ip>
 
 # second basic all ports nmap
-sudo nmap -v -p- -oA <outputfile> <ip>
-
-# Ultra fast nmap
-sudo nmap --min-rate 10000 <ip>
-
-# limited nmap
-nmap -iL <file> -p80,443,8000,8080,8443,10000
+sudo nmap -n -Pn -v -p- --open -oA <outputfile> <ip>
 
 # cidr2ip
 nmap -sL <range> | awk '/Nmap scan report/{print $NF}'

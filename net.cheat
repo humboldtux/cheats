@@ -1,0 +1,4 @@
+% windows, password
+
+# Change password
+net rpc password <targetuser> -U <privilegeduser> -S <server>
