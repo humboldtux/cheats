@@ -1,0 +1,4 @@
+% smb
+
+# all enum
+enum4linux-ng -A <ip>

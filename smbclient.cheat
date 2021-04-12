@@ -3,5 +3,11 @@
 # List SMB shares with anonymous user + empty password
 smbclient -L //<target>
 
+# List SMB shares with user
+smbclient -L //<target> --user
+
 # List SMB shares with invalid user + empty password
 smbclient -U invalid%invalid -L //<target>
+
+# Connect to SMB share with user
+smbclient //<target>/<share> --user

