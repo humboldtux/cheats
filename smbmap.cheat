@@ -2,3 +2,6 @@
 
 # List SMB shares with invalid user + empty password
 smbmap -u invalid -H <target>
+
+# List shares with valid user
+smbmap -u <user> -p <pwd> -d <domain> -H <target>

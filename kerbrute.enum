@@ -1,4 +1,0 @@
-% kerberos, ad
-
-# Enum users
-kerbrute userenum --dc <target> -d <domain> <userlist>

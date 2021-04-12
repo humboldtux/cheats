@@ -1,0 +1,7 @@
+% smb
+
+# all enum
+enum4linux -a <ip>
+
+# shares enum
+enum4linux -A <ip>

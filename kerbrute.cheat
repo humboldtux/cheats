@@ -1,0 +1,4 @@
+% kerberos, active-directory
+
+# Enum users
+kerbrute userenum --dc <target> -d <domain> <userlist> -t 100
