@@ -1,0 +1,10 @@
+% recon, enumeration, scan
+
+# scan subnet range (e.g.: 10.0.0.0/8)
+masscan -p22,80 --rate 15000 <subnet>
+
+# Use binary outoup format for large scan
+masscan -p0-65535 --rate 15000 --output-format binary --output-filename  <output>.mass <subnet>
+
+# Export binary file
+masscan --read-scan <input>.mass --output-format <format> --output-filename <output>.<format>

@@ -1,4 +1,13 @@
-% packet
+% packet, snif
 
 # Listen icmp ping
 tcpdump -n icmp
+
+# Show tcp packets against target ip in ASCII and Hex
+tcpdump -nnX tcp and dst <ip>
+
+# Show udp packets from ip
+tcpdump -nn udp and src <ip>
+
+# Show all TCP port 80 packets going to or from host
+tcpdump -nn tcp and port 80 and host <ip>
