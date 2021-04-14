@@ -1,0 +1,125 @@
+% windows
+
+# Search for a string within a file
+type <file> | find /i "<string>"
+
+# Search for a regexp within a file
+type <file> | findstr "<regexp>"
+
+% group
+
+# list local users
+net user
+
+# list local users
+net localgroup
+
+# list group account
+net localgroup <group>
+
+# Add a user
+net user <logon_name> <pass> /add
+
+# Put user in a group
+net localgroup <group> <user> /add
+
+# Remove user from group
+net localgroup <group> <user> /del
+
+# Del a user
+net user <logon_name> /del
+
+% firewall
+
+# See whole firewall config
+netsh advfirewall show allprofiles
+
+# Delete firewall rule
+netsh advfirewall firewall del <rule> name="<Comment>"
+
+# Disable firewall
+netsh advfirewall set allprofiles state off
+
+% registry
+
+# Read a reg key
+reg query <key>
+
+# Read a reg key remotely 
+reg query \\<target> <key>
+
+# Change a key
+reg add <keyname> /v <valuename> /t <type> /d <data>
+
+% smb
+
+# Set up a sesion with a target
+net use \\<target> <password> /u:<user>
+
+# Mount a target share
+net use * \\<target>\share <pass> /u:<user>
+
+# Mount a target share (aternative)
+net use * \\<target>\share <pass> /u:<machinename_or_domain>\<user>
+
+# Delt smb session
+net use \\<target> /del
+
+# Drop all smb session
+net use * /del
+
+% service
+
+# List running services
+sc query
+
+# via wmic
+wmic service where (displayname like "%<pattern>%") get name
+
+# List running services remotely
+sc \\<target> query
+
+# List all services
+sc query state= all
+
+# Details for a service
+sc query <name>
+
+# start a service
+sc start <name>
+
+# enable service
+sc config <name> start= demand
+
+# stop a service
+sc stop <name>
+
+% exec, command, process
+
+# exec command with wmic
+wmic /node:<target> /user:<admin_user> /password:<pass> process call create <cmd>
+
+# list process on target
+wmic /node:<target> /user:<admin_user> /password:<pass> process list brief
+
+# Kill process on target by pid
+wmic /node:<target> /user:<admin_user> /password:<pass> process where porcessid="<pid>" delete
+
+# Kill process on target by name
+wmic /node:<target> /user:<admin_user> /password:<pass> process where name="<name>" delete
+
+% env
+
+# whoami
+set <user>
+
+# show path for commands to run
+set path
+
+% find, search
+
+# basic search
+dir /b /s <dir>\<file>
+
+# Find file from systemroot
+dir /b /s %systemroot%\<file>

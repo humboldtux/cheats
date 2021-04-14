@@ -1,4 +1,4 @@
 % rdp
 
 # basic connection
-rdesktop -u <user> <target>
+rdesktop -d <domain> -u <user> -p <pass> <target>

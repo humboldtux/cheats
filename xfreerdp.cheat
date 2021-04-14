@@ -1,4 +1,7 @@
 % rdp
 
 # basic connection
-xfreerdp /u:<user> /p:<password> /v:<target>
+xfreerdp /u:<domain>\<user> /p:<password> /v:<target>
+
+# hash connection
+xfreerdp /u:<domain>\<username> /pth:<hash> /v:<target>
