@@ -1,0 +1,4 @@
+% rdp
+
+# basic connection
+xfreerdp /u:<user> /p:<password> /v:<target>

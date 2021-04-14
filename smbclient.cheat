@@ -1,7 +1,7 @@
 % smb
 
 # List SMB shares with anonymous user + empty password
-smbclient -L //<target>
+smbclient -N -L //<target>
 
 # List SMB shares with user
 smbclient -L //<target> --user

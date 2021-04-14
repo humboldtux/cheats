@@ -1,0 +1,4 @@
+% rdp
+
+# basic connection
+rdesktop -u <user> <target>
