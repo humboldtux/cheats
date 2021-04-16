@@ -1,5 +1,7 @@
 % ffuf
 
+$ list: find /opt/wordlists -type f -not -path "/opt/wordlists/SecLists/.git/*" -print
+
 # Basic fuff
 ffuf -u <url>/FUFF -w <wordlist>
 
@@ -8,7 +10,9 @@ ffuf -u <url>/FUFF -w /opt/wordlists/SecLists/Fuzzing/special-chars.txt -mc <cod
 
 # Basic fzf fuff
 ffuf -u <url>/FUFF -w <list> -t 75 -ac -c
-$ list: find /opt/wordlists -type f -not -path "/opt/wordlists/SecLists/.git/*" -print
+
+# Basic search php extension recursively
+ffuf -w <list> -u <target>/FUZZ -recursion -recursion-depth 2 -e .<ext> -v
 
 ; dom=$(echo <url> | unfurl format %s%d)
 # Quick

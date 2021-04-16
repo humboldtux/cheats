@@ -1,0 +1,6 @@
+% web, enum
+
+$ list: find /opt/wordlists -type f -not -path "/opt/wordlists/SecLists/.git/*" -print
+
+# Basic search extension recursively
+feroxbuster --url <target> --depth 2 --wordlist <list> -x <extension>

@@ -1,6 +1,9 @@
-% ping, sweep
+% enum
 
-# Ping sweep network ranges
+# Ping sweep network range
+sudo nmap -n -sn -PE -oA <outpufile> <network>
+
+# Ping sweep network ranges from file
 sudo nmap -n -sn -iL <rangesfile> -oA <outpufile> -PE
 
 % enumeration
