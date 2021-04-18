@@ -6,7 +6,7 @@ type <file> | find /i "<string>"
 # Search for a regexp within a file
 type <file> | findstr "<regexp>"
 
-% group
+% windows, group
 
 # list local users
 net user
@@ -29,7 +29,7 @@ net localgroup <group> <user> /del
 # Del a user
 net user <logon_name> /del
 
-% firewall
+% windows, firewall
 
 # See whole firewall config
 netsh advfirewall show allprofiles
@@ -40,7 +40,7 @@ netsh advfirewall firewall del <rule> name="<Comment>"
 # Disable firewall
 netsh advfirewall set allprofiles state off
 
-% registry
+% windows, registry
 
 # Read a reg key
 reg query <key>
@@ -51,7 +51,7 @@ reg query \\<target> <key>
 # Change a key
 reg add <keyname> /v <valuename> /t <type> /d <data>
 
-% smb
+% windows, smb
 
 # Set up a sesion with a target
 net use \\<target> <password> /u:<user>
@@ -68,7 +68,7 @@ net use \\<target> /del
 # Drop all smb session
 net use * /del
 
-% service
+% windows, service
 
 # List running services
 sc query
@@ -94,7 +94,7 @@ sc config <name> start= demand
 # stop a service
 sc stop <name>
 
-% exec, command, process
+% windows, exec, command, process
 
 # exec command with wmic
 wmic /node:<target> /user:<admin_user> /password:<pass> process call create <cmd>
@@ -108,7 +108,7 @@ wmic /node:<target> /user:<admin_user> /password:<pass> process where porcessid=
 # Kill process on target by name
 wmic /node:<target> /user:<admin_user> /password:<pass> process where name="<name>" delete
 
-% env
+% windows, env
 
 # whoami
 set <user>
@@ -116,7 +116,7 @@ set <user>
 # show path for commands to run
 set path
 
-% find, search
+% windows, find, search
 
 # basic search
 dir /b /s <dir>\<file>

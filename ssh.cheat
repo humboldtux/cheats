@@ -5,3 +5,20 @@ ssh-keygen -y -f <privatekey>
 
 # Compare a public key to a public key etracted from aprivate key
 printf "$(ssh-keygen -y -f <private>)\n$(awk '{print $1" "$2}' <public>)" | sort | uniq -c
+
+% forward, pivot, tunnel, proxy
+
+# Port forwarding
+ssh -L <localport>:<targetip>:<targetport> <pivotuser>@<pivotip> -fN
+
+# Reverse Port Forwarding
+ssh -R <localport>:<targetip>:<targetport> <localuser>@<localip> -i <KEYFILE> -fN
+
+# Proxychains proxy
+ssh -D <localport> <pivotuser>@<pivotuser> -fN
+
+# Proxychains proxy
+ssh -R <port> <localuser>@<localip> -i <KEYFILE> -fN
+
+# Forward to remote internal webserver
+ssh -L 8000:127.0.0.1:80 <pivotip> -fN

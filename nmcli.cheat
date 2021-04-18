@@ -1,0 +1,4 @@
+% network, configuration
+
+# Show internet configuration, dns, ...
+nmcli dev show

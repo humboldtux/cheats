@@ -1,0 +1,4 @@
+% password, zip, crack
+
+# Dictionnary attack
+fcrackzip -v -D -p <wordlist> -u <zipfile>

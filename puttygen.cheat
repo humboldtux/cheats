@@ -1,0 +1,4 @@
+% ssh, putty
+
+# Convert ssh key to windows ppk
+puttygen <KEYFILE> -o <OUTPUT_KEY>.ppk

@@ -1,4 +1,4 @@
-% enum
+% enumeration
 
 # Ping sweep network range
 sudo nmap -n -sn -PE -oA <outpufile> <network>
@@ -6,16 +6,14 @@ sudo nmap -n -sn -PE -oA <outpufile> <network>
 # Ping sweep network ranges from file
 sudo nmap -n -sn -iL <rangesfile> -oA <outpufile> -PE
 
-% enumeration
-
-# fast nmap
+# Fast basic nmap
 sudo nmap -n -Pn -T4 -F <ip>
 
-# first basic nmap
-sudo nmap -n -Pn -v -sC -sV -oA <outputfile> <ip>
+# Fast all ports nmap
+sudo  nmap -n -Pn -p- --min-rate 2000 -T4 <target>
 
-# second basic all ports nmap
-sudo nmap -n -Pn -v -p- --open -oA <outputfile> <ip>
+# Ports Details
+sudo nmap -n -Pn -v -sC -sV -A <target>
 
 # cidr2ip
 nmap -sL <range> | awk '/Nmap scan report/{print $NF}'

