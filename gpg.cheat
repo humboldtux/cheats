@@ -1,0 +1,8 @@
+% gpg
+
+# List keys
+gpg --list-keys
+gpg --list-secret-keys
+
+# Decrypt file
+gpg -d -o <outout.file> <encrypted.file>
