@@ -1,0 +1,4 @@
+% ssh, tunnel, proxy, forward
+
+# Forward traffic into network
+sshuttle -r <pivotuser>@<pivotip> --ssh-cmd "ssh -i <pivotkey>" -x <pivotip> <targetnetwork> 

