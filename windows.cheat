@@ -17,6 +17,12 @@ net localgroup
 # list group account
 net localgroup <group>
 
+# Create user, add it to admin group, winrm group and rdp group for remote gui (winrm/rdp) access
+net user <name> <pass> /add
+net localgroup Administrators <name> /add
+net localgroup "Remote Management Users" <name> /add
+net localgroup "Remote Desktop Users" <name> /add
+
 # Add a user
 net user <logon_name> <pass> /add
 

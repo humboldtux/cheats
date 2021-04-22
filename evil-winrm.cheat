@@ -5,3 +5,6 @@ evil-winrm -u <user> -p <pass> -i <uri>
 
 # NTLM Hash connection
 evil-winrm -u <user> -H <hash> -i <uri>
+
+# Load in-memory scripts from a local dir
+evil-winrm -u <user> -p <pass> -i <uri> -s /opt/Empire/data/module_source/situational_awareness/network

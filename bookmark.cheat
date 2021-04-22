@@ -2,12 +2,18 @@
 
 # Methodology
 xdg-open https://book.hacktricks.xyz/
+xdg-open https://github.com/swisskyrepo/PayloadsAllTheThings
 
 # Active Directory bookmarks, mindmaps, reference
+xdg-open https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Active%20Directory%20Attack.md
 xdg-open https://casvancooten.com/posts/2020/11/windows-active-directory-exploitation-cheat-sheet-and-command-reference
+xdg-open https://book.hacktricks.xyz/windows/active-directory-methodology
 xdg-open https://github.com/Orange-Cyberdefense/arsenal
-https://book.hacktricks.xyz/windows/active-directory-methodology
+xdg-open https://github.com/infosecn1nja/AD-Attack-Defense
 
 # revshell bookmarks
 xdg-open https://github.com/d4t4s3c/Reverse-Shell-Cheat-Sheet
 xdg-open https://www.revshells.com
+
+# password cracking
+xdg-open https://crackstation.net

@@ -1,7 +1,7 @@
 % rdp
 
 # basic connection
-xfreerdp /u:<domain>\<user> /p:<password> /v:<target>
+xfreerdp /v:<target> /u:<user> /p:<pass> +clipboard /dynamic-resolution /drive:<sharename>,<sharepath>
 
 # hash connection
 xfreerdp /u:<domain>\<username> /pth:<hash> /v:<target>
