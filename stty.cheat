@@ -1,0 +1,7 @@
+% revshell
+
+# Better shell
+echo "stty raw -echo"
+echo "fg"
+echo "export TERM=xterm"
+echo "stty rows <rows> cols <cols>"

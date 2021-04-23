@@ -1,7 +1,0 @@
-% revshell
-
-# Better shell
-stty raw -echo
-fg
-export TERM=xterm
-stty rows <rows> cols <cols>

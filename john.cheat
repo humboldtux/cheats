@@ -1,4 +1,4 @@
 % password, crack, hash
 
-/bin/bash: q : commande introuvable
+# Basic usage
 john -w=/opt/wordlists/rockyou.txt <hashfile>
