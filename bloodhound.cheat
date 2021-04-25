@@ -1,4 +1,4 @@
 % ad
 
 # Dump AD data to ingest
-bloodhound.py -c all -u <username> -p <password> -ns <activedirectory_dns> -d <domain>
+bloodhound.py -c all -u <username> -p <password> -ns <activedirectory_dns_ip> -d <domain> -gc <activedirectory_dc_fqdn>

@@ -3,6 +3,9 @@
 # scan subnet range (e.g.: 10.0.0.0/8)
 masscan -p22,80 --rate 15000 <subnet>
 
+# Basic ip scan
+masscan -p 1-65535 <target> -e <interface> --rate=1000
+
 # Use binary outoup format for large scan
 masscan -p0-65535 --rate 15000 --output-format binary --output-filename  <output>.mass <subnet>
 

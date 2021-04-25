@@ -1,0 +1,7 @@
+% ldap, openldap, activedirectory
+
+# directory info
+ldapsearch -x -H ldap://<ip>
+
+# Authenticated Domain info
+ldapsearch -x -b "<domain_dcs>" -H ldap://<ip> -D <user>@<domain> -W "(objectclass=*)" aclEntry alcPropagate aclSource enteryOwner ownerPropagate ownerSource

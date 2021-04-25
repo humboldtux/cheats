@@ -1,0 +1,4 @@
+% activedirectory, enum
+
+# List info about domain users
+SharpView.exe Get-DomainUser -domain cola

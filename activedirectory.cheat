@@ -1,0 +1,4 @@
+% activedirectory, enum, powershell
+
+# enumerate ACLs
+(Get-Acl 'AD:\CN=Administrator,CN=Users,DC=cola,DC=local').Access

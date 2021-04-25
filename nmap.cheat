@@ -10,10 +10,10 @@ sudo nmap -n -sn -iL <rangesfile> -oA <outpufile> -PE
 sudo nmap -n -Pn -T4 -F <ip>
 
 # Fast all ports nmap
-sudo  nmap -n -Pn -p- --min-rate 2000 -T4 <target>
+nmap -n -Pn -p- --min-rate 4500 --max-rtt-timeout 1500ms <target>
 
 # Ports Details
-sudo nmap -n -Pn -v -sC -sV -A <target>
+sudo nmap -n -Pn -v -sC -sV -A -p<ports> <target>
 
 # cidr2ip
 nmap -sL <range> | awk '/Nmap scan report/{print $NF}'

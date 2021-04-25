@@ -1,6 +1,18 @@
 % powershell
 
-# remoting
+# Show if Powershell ContraniedLanguage is enable
+$ExecutionContext.SessionState.LanguageMode
+
+# Show if Applocker is enabled
+Get-AppLockerPolicy -Effective
+
+# Show if DeviceGuard is enabled
+Cet-CimInstance -ClassName Win32_DeviceGuard -Nmespace root\Microsoft\Windows\DeviceGuard
+
+# PS remoting
 $pass = ConvertTo-SecureString <pass> -asplaintext -force
 $cred = New-Object System.Management.Automation.PSCredential(<user>, $pass)
-Enter-PSSession -Computer <uri> -credential $cred -Authentication negotiate
+$target = New-PSSession -ComputerName <target> -Crdential $creds
+
+# Invoke-Command on remote computer via PS Remoting Session
+Invoke-Command -ScriptBlock{hostname;whoami;Get-LocalGroupMember -Group Administrators} -Session <sessions> -Credential $cred

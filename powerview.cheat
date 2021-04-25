@@ -1,0 +1,42 @@
+% activedirectory, powershell, enum
+
+# Get current domain
+Get-NetDomain
+
+# Get domain SID for the current domain
+Get-DomainSID
+
+# Get domain controllers for the current domain
+Get-NetDomainController
+
+# Get a list of users in the current domain
+Get-NetUser
+Get-NetUser –Username <user>
+
+# Search for a particular string in a user's attributes
+Find-UserField -SearchField Description -SearchTerm "built"
+
+# Get a list of computers in the current domain
+Get-NetComputer
+Get-NetComputer –OperatingSystem "*Server 2019*"
+
+# Get all the groups in the current domain
+Get-NetGroup
+
+# Get all the members of the Domain Admins group
+Get-NetGroupMember -GroupName "Domain Admins" -Recurse
+
+# Get the group membership for a user:
+Get-NetGroup –UserName "fileadmin"
+
+# Get all ACLs of domain
+Get-ObjectAcl -ResolveGUIDs
+
+# Get the ACLs associated with the specified object using PowerView
+Get-ObjectAcl -SamAccountName <object> –ResolveGUIDs
+
+# Get the ACLs associated with the specified prefix to be used for search
+Get-ObjectAcl -ADSprefix 'CN=Administrator,CN=Users' -Verbose
+
+# Search for interesting ACEs
+Invoke-ACLScanner -ResolveGUIDs

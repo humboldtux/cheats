@@ -1,0 +1,4 @@
+% password, crack
+
+# Brute force POST login form
+hydra -l <username> -P <wordlist> MACHINE_IP http-post-form "/<url>:<usernameparam>=^USER^&<passwordparam>=^PASS^:F=<failuremessage>" -V

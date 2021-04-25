@@ -1,0 +1,29 @@
+% powershell, activedirectory, enum
+
+# Get current domain
+Get-ADDomain
+
+# Get domain SID for the current domain
+(Get-ADDomain).DomainSID
+
+# Get domain controllers for the current domain
+Get-ADDomainController
+
+# Get a list of users in the current domain
+Get-ADUser -Filter * -Properties *
+Get-ADUser -Identity <user> -Properties *
+
+# Search for a particular string in a user's attributes:
+Get-ADUser -Filter 'Description -like "*<pattern>*"' -Properties Description | select name,Description
+
+# Get a list of computers in the current domain
+Get-ADComputer -Filter * | select Name
+
+# Get all the groups name in the current domain
+Get-ADGroup -Filter * | select Name
+
+# Get all the members of the Domain Admins group
+Get-ADGroupMember -Identity "Domain Admins" -Recursive
+
+# Get the group membership for a user:
+Get-ADPrincipalGroupMembership -Identity <user>

@@ -1,5 +1,8 @@
 % smb
 
+# Basic unauth connection
+smbmap -H <ip>
+
 # List SMB shares with invalid user + empty password
 smbmap -u invalid -H <target>
 
