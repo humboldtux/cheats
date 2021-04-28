@@ -29,6 +29,15 @@ Get-NetGroupMember -GroupName "Domain Admins" -Recurse
 # Get the group membership for a user:
 Get-NetGroup –UserName "fileadmin"
 
+# Get GPO Restricted Groups
+Get-NetGPOGroup
+
+# Show OU with GPO
+Get-NetOU -FullData | ?{$_.gplink -match '<GPOName>'}
+
+# GEt Computer in OU
+Get-NetOU -OUName <OUName> | %{Get-NetComputer -ADSPath $_}
+
 # Get all ACLs of domain
 Get-ObjectAcl -ResolveGUIDs
 
@@ -40,3 +49,6 @@ Get-ObjectAcl -ADSprefix 'CN=Administrator,CN=Users' -Verbose
 
 # Search for interesting ACEs
 Invoke-ACLScanner -ResolveGUIDs
+
+# Search for interesting ACLs based on property
+Invoke-ACLScanner | ?{$_.IdentityReference -match '<pattern>'}

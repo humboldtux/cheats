@@ -1,0 +1,4 @@
+% mimikatz, windows, lsass
+
+# Offline lsass dump extraction
+pypykatz lsa minidump <lsass.dmp>

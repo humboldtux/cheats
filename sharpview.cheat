@@ -1,0 +1,4 @@
+% enum, windows, activedirectory, csharp
+
+# Show Domain ACLs
+SharpView.exe Invoke-AclScanner -domain cola

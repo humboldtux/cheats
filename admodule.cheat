@@ -13,8 +13,8 @@ Get-ADDomainController
 Get-ADUser -Filter * -Properties *
 Get-ADUser -Identity <user> -Properties *
 
-# Search for a particular string in a user's attributes:
-Get-ADUser -Filter 'Description -like "*<pattern>*"' -Properties Description | select name,Description
+# Search for a not null description in a user's attributes:
+Get-ADUser -Filter 'Description -ne "$null"' -Properties Description | select name,Description
 
 # Get a list of computers in the current domain
 Get-ADComputer -Filter * | select Name

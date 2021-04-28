@@ -1,10 +1,16 @@
 % enumeration
 
+# Scan subnet
+nmap -sS -nvv -T4 <subnet>
+
 # Ping sweep network range
 sudo nmap -n -sn -PE -oA <outpufile> <network>
 
 # Ping sweep network ranges from file
 sudo nmap -n -sn -iL <rangesfile> -oA <outpufile> -PE
+
+# UDP Scan
+sudo nmap -sU -v -T4 -F
 
 # Fast basic nmap
 sudo nmap -n -Pn -T4 -F <ip>

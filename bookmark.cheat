@@ -11,6 +11,7 @@ xdg-open https://book.hacktricks.xyz/windows/active-directory-methodology
 xdg-open https://github.com/Orange-Cyberdefense/arsenal
 xdg-open https://github.com/infosecn1nja/AD-Attack-Defense
 xdg-open https://attack.stealthbits.com/
+https://github.com/infosecn1nja/AD-Attack-Defense
 
 # revshell bookmarks
 xdg-open https://github.com/d4t4s3c/Reverse-Shell-Cheat-Sheet

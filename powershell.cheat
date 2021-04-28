@@ -1,18 +1,36 @@
 % powershell
 
-# Show if Powershell ContraniedLanguage is enable
+# Show if Powershell ConstrainedLanguage is enable
 $ExecutionContext.SessionState.LanguageMode
 
 # Show if Applocker is enabled
 Get-AppLockerPolicy -Effective
 
-# Show if DeviceGuard is enabled
+# Show if Defender WDAC DeviceGuard is enabled
 Cet-CimInstance -ClassName Win32_DeviceGuard -Nmespace root\Microsoft\Windows\DeviceGuard
+
+# Windows Defender excluded path
+(Get-MpPreference).Exclusionpath
+
+# Disable Windows Defender realtime monitoring
+Set-MpPreference -DisableRealtimeMonitoring $true
 
 # PS remoting
 $pass = ConvertTo-SecureString <pass> -asplaintext -force
 $cred = New-Object System.Management.Automation.PSCredential(<user>, $pass)
-$target = New-PSSession -ComputerName <target> -Crdential $creds
+$session = New-PSSession -ComputerName <target> -Credential $creds
 
 # Invoke-Command on remote computer via PS Remoting Session
-Invoke-Command -ScriptBlock{hostname;whoami;Get-LocalGroupMember -Group Administrators} -Session <sessions> -Credential $cred
+Invoke-Command -ScriptBlock{hostname;whoami;Get-LocalGroupMember -Group Administrators} -Session <session>
+
+# Search Scheduled Task base on arguments list, print details
+(Get-ScheduledTask | ?{$_.Actions.Arguments -match "<argumentpattern>"} ).Actions
+
+# Registry: get autologon
+Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\WindowsNT\CurrentVersion\Winlogon" -Name "DefaultPassword"
+
+# Get Shell options and history path
+Get-PSReadlineOption
+
+# mssql query via powershell
+Invoke-Sqlcmd -Query '<query>' -Username <user> -Password <pass>
