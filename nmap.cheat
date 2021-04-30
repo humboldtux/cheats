@@ -4,6 +4,9 @@
 nmap -sS -nvv -T4 <subnet>
 
 # Ping sweep network range
+sudo nmap -n -sn -sP <network>
+
+# Ping sweep network range
 sudo nmap -n -sn -PE -oA <outpufile> <network>
 
 # Ping sweep network ranges from file
