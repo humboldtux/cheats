@@ -59,5 +59,13 @@ mssqlclient.py <user>@<target>
 # enumerate user via smb with guest
 lookupsid.py guest@<target>
 
+# Connect to target as smb share
+smbclient.py <user>:<pass>@<target>
+
 # Get semi-interactive shell to execute command
 smbexec.py -hashes :<hash> <user>@<target>
+
+% delegation
+
+# check for constrained/unconstrained delegations
+findDelegation.py <user>:<pass> -dc-ip <dcip>

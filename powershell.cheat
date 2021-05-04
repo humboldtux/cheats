@@ -26,11 +26,18 @@ Invoke-Command -ScriptBlock{hostname;whoami;Get-LocalGroupMember -Group Administ
 # Search Scheduled Task base on arguments list, print details
 (Get-ScheduledTask | ?{$_.Actions.Arguments -match "<argumentpattern>"} ).Actions
 
-# Registry: get autologon
-Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\WindowsNT\CurrentVersion\Winlogon" -Name "DefaultPassword"
+# Registry get autologon
+Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name "DefaultPassword"
 
 # Get Shell options and history path
 Get-PSReadlineOption
 
 # mssql query via powershell
 Invoke-Sqlcmd -Query '<query>' -Username <user> -Password <pass>
+
+# Disable windows firewall
+Set-NetFirewallProfile -Name Domain,Private,Public -Enabled False
+
+sudo chmod -x /usr/lib/evolution/evolution-addressbook-factory
+sudo chmod -x /usr/lib/evolution/evolution-calendar-factory
+sudo chmod -x /usr/lib/evolution/evolution-source-registry

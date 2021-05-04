@@ -6,3 +6,6 @@ hashcat --example-hashes
 # base usage
 hashcat -m <mode> <hashfile> <list>
 $ list: find /opt/wordlists -type f -not -path "/opt/wordlists/SecLists/.git/*" -print
+
+# Generate a custom password variation
+hashcat -a 0 -m <hashid> <hash> <wordlist> -r /opt/wordlists/hob064.rule -o <cracked> -w 3 -O
