@@ -1,0 +1,4 @@
+% python
+
+# set up a python smtp server
+sudo python3 -m smtpd -n -c DebugginServer <localip>:25

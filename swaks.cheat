@@ -1,4 +1,4 @@
 % email
 
 # unauth send email
-swaks --from <fromaddress> --to <toaddress> --header 'Subject: <subject>' --body '<body>' --server <serverip>
+swaks --from <fromaddress> --to <toaddress> --header 'Subject: <subject>' --body '<body>' --server <serverip> --attach @<file>
