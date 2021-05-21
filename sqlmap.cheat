@@ -14,3 +14,6 @@ sqlmap -u <url> --batch --banner --os-shell --sql-shell
 
 # Execute shell command
 sqlmap -u <url> -p <cmd> --sql-shell
+
+# MD5 Tamper input parameter with eval function
+sqlmap -u <url>?<param1>=abc&<param2>=xyz" --eval="import hashlib ; <param2>=hashlib.md5((<salt>+<param1>).encode('utf-8')).hexdigest()" --batch
