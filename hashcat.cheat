@@ -9,3 +9,9 @@ $ list: find /opt/wordlists -type f -not -path "/opt/wordlists/SecLists/.git/*" 
 
 # Generate a custom password variation
 hashcat -a 0 -m <hashid> <hash> <wordlist> -r /opt/wordlists/hob064.rule -o <cracked> -w 3 -O
+
+# Use custom passwords variation
+hashcat -m 3200 <hashes> -r rules\best64.txt <custom_wordlist>
+
+# Generate custom password list
+hashcat --stdout pw -r /usr/share/hashcat/rules/best64.rule > pwlist
