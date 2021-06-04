@@ -3,8 +3,11 @@
 # Parse and show jwt token
 python3 jwt_tool.py  <JWT>
 
-# Test JWT Tocken
+# Test JWT Token
 python3 jwt_tool.py -t <target> -rc <cookies> -M pb -cv <stringpattern>
+
+# Create JWT with secret
+python3 jwt_tool.py -b -S <ALG> -p <SECRET> $(echo -n '{"alg":">ALG>","typ":"JWT"}' | base64).$(echo -n '<PAYLOAD>' | base64 -w0).
 
 # Modify JWT and sign it with custom key
 python3 jwt_tool.py <JWT> -T -S rs256 -pr jwttool_custom_private_RSA.pem
