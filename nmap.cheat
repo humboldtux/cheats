@@ -29,3 +29,8 @@ nmap -sL <range> | awk '/Nmap scan report/{print $NF}'
 
 # nmap scan via proxy
 nmap -n -Pn -p- 127.0.0.1 --proxy http://<proxy>:3128
+
+% proxy
+
+# nmap scan proxychains
+proxychains nmap -sT -Pn -v <target>
