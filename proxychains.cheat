@@ -1,0 +1,4 @@
+% proxy
+
+# Proxychains nmap scan
+proxychains nmap -sT -Pn -v <target>

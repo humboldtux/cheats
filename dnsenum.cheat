@@ -1,0 +1,4 @@
+% dns, enumeration, recon
+
+# Enumerate standalone dns box
+dnsenum --threads 64 --dnsserver <ip> -f /opt/wordlists/SecLists/Discovery/DNS/subdomains-top1million-110000.txt <domain>
