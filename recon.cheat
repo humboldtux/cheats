@@ -3,6 +3,9 @@
 # dnsrecon
 dnsrecon.py -d <domain>
 
+# Brute force dns hostname par reverse looking des ips d'un domaine
+dnsrecon -r <RANGE> -n <DNS> -d PleaseSubScribe
+
 # Find subdomains
 findomain -t <domain>
 
