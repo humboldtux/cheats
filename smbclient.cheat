@@ -11,3 +11,6 @@ smbclient -U invalid%invalid -L //<target>
 
 # Connect to SMB share with user
 smbclient //<target>/<share> --user
+
+# smb pass the hash
+smbclient //<target>/<share>  -U <user> --pw-nt-hash <hash>

