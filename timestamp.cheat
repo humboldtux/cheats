@@ -1,0 +1,7 @@
+% find, ls , timestamp
+
+# Show timestamp with ls
+/usr/bin/ls -l --time-style=full-iso
+
+# Show timestamp with find
+find / -type f -printf "%T+ %p\n" 2> /dev/null
