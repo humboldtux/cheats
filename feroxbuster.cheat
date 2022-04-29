@@ -4,3 +4,6 @@ $ list: find /opt/wordlists -type f -not -path "/opt/wordlists/SecLists/.git/*" 
 
 # Basic search extension recursively
 feroxbuster --url <target> --depth 2 --wordlist <list> -x <extension>
+
+# API Fuzzing: Filter on http response code, HTTP method and response size
+feroxbuster --url <target> --wordlist <list> --force-recursion -C <http_code1>,<http_code2> -m <http_method1>,<http_method2> -S <response_size1>,<response_size2>

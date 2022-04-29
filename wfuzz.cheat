@@ -1,0 +1,7 @@
+% web, enum, fuzz
+
+# POST Method
+wfuzz -X POST -u <target> -w <wordlist>
+
+# Hiding HTTP code
+wfuzz -u <target> -w <wordlist> --hc <http_code>
