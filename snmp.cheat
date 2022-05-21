@@ -1,0 +1,4 @@
+% snmp
+
+# snmpwalk with 1000 threads
+snmpbulkwalk -Cr1000 -c public -v2c 10.10.11.136
