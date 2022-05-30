@@ -1,0 +1,7 @@
+% apt
+
+# Désactiver l'installation d'un paquet
+apt-mark hold gitlab-ee gitlab-runner
+
+# Réactiver l'installation d'un paquet
+apt-mark unhold gitlab-ee gitlab-runner
