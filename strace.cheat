@@ -1,0 +1,4 @@
+% strace
+
+# trace files open by command
+strace -o /tmp/output -f -t -e trace=file <cmd>
